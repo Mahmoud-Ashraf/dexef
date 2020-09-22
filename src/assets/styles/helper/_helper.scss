@@ -1,0 +1,54 @@
+/* ==================== Fonts ==================== */
+
+// Generate font calsses from font-12 to font-72 increments by 2px
+// Classes (font-value)
+@for $i from 0 through 30 {
+    .font-#{12+2*$i} {
+      font-size: 12px + 2*$i;
+    }
+}
+
+/* ==================== Paddings ==================== */
+
+// Generate padding calsses from p-10 to p-100 increments by 5px
+// Classes (pl-value - pr-value - pb-value - bt-value - py-value - px-value - p-value)
+@for $i from 0 through 18 {
+  .pl-#{10+5*$i}, .px-#{10+5*$i}, .p-#{10+5*$i} {
+    padding-left: 10px + 5*$i;
+  }
+  .pr-#{10+5*$i}, .px-#{10+5*$i}, .p-#{10+5*$i} {
+    padding-right: 10px + 5*$i;
+  }
+  .pt-#{10+5*$i}, .py-#{10+5*$i}, .p-#{10+5*$i} {
+    padding-top: 10px + 5*$i;
+  }
+  .pb-#{10+5*$i}, .py-#{10+5*$i}, .p-#{10+5*$i} {
+    padding-bottom: 10px + 5*$i;
+  }
+}
+
+/* ==================== Margins ==================== */
+
+// Generate Margin calsses from m-10 to m-100 increments by 5px
+// Classes (ml-value - mr-value - mb-value - mt-value - my-value - mx-value m-value)
+@for $i from 0 through 18 {
+  .ml-#{10+5*$i}, .mx-#{10+5*$i}, .m-#{10+5*$i} {
+    margin-left: 10px + 5*$i;
+  }
+  .mr-#{10+5*$i}, .mx-#{10+5*$i}, .m-#{10+5*$i} {
+    margin-right: 10px + 5*$i;
+  }
+  .mt-#{10+5*$i}, .my-#{10+5*$i}, .m-#{10+5*$i} {
+    margin-top: 10px + 5*$i;
+  }
+  .mb-#{10+5*$i}, .my-#{10+5*$i}, .m-#{10+5*$i} {
+    margin-bottom: 10px + 5*$i;
+  }
+}
+
+/* ==================== Overlay ==================== */
+
+// Overlay Class to make an element disabled
+.overlay {
+  @include overlay(#000, 0.5);
+}

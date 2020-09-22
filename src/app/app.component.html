@@ -1,0 +1,220 @@
+<div class="page-container">
+  <header class="nav-header bg-white">
+    <div class="left-header">
+      <div class="toggle-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="header-brand">
+        <h1>Task DEXEF</h1>
+      </div>
+      <div class="header-search">
+        <input class="search-bar" type="text" placeholder="Invoice Number">
+      </div>
+    </div>
+
+    <div class="right-header">
+      <div class="header-icons">
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-cog"></i>
+      </div>
+      <div class="header-user">
+        <img src="assets/images/user.jpg" alt="user avatar">
+      </div>
+    </div>
+  </header>
+  <main class="main-content">
+    <nav class="side-nav">
+      <ul class="nav-list">
+        <li><i class="fas fa-home"></i></li>
+        <li><i class="fas fa-home"></i></li>
+        <li><i class="fas fa-home"></i></li>
+        <li><i class="fas fa-home"></i></li>
+        <li><i class="fas fa-home"></i></li>
+        <li><i class="fas fa-home"></i></li>
+      </ul>
+    </nav>
+    <article class="content-body">
+      <div class="content-block">
+        <div class="article-title">
+          <h2>Sales Invoice <i class="fas fa-print"></i></h2>
+          <button class="btn btn-main"><i class="fas fa-plus"></i> new invoice</button>
+        </div>
+        <div class="article-content">
+          <div class="main-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Invoice No.</th>
+                  <th>Customer</th>
+                  <th>Sold Items</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#4743783</td>
+                  <td>Bella Hunter</td>
+                  <td>5</td>
+                  <td>1200 AED</td>
+                  <td><i class="fas fa-ellipsis-v"></i></td>
+                </tr>
+                <tr>
+                  <td>#4743783</td>
+                  <td>Bella Hunter</td>
+                  <td>5</td>
+                  <td>1200 AED</td>
+                  <td><i class="fas fa-ellipsis-v"></i></td>
+                </tr>
+                <tr>
+                  <td>#4743783</td>
+                  <td>Bella Hunter</td>
+                  <td>5</td>
+                  <td>1200 AED</td>
+                  <td><i class="fas fa-ellipsis-v"></i></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>invoices: 3</td>
+                  <td>Customer: 2</td>
+                  <td>Sold: 25</td>
+                  <td>Total: 3600 AED</td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="content-block">
+        <div class="article-title">
+          <h2>Week Summary</h2>
+        </div>
+        <div class="article-content">
+          <div class="chart-container">
+            <div class="chart-statictics">
+              <ul class="statstics-list-head">
+                <li><span>All</span> <span>10,000. AED</span></li>
+              </ul>
+              <ul class="statstics-list-content">
+                <li><span>Portrait</span> <span>2,500. AED</span></li>
+                <li><span>Modern</span> <span>2,500. AED</span></li>
+                <li><span>Sketches</span> <span>2,500. AED</span></li>
+                <li><span>Natural</span> <span>2,500. AED</span></li>
+              </ul>
+            </div>
+            <div class="total-items">
+              <h3 class="total-items-value">98</h3>
+              <p class="total-text">Total items</p>
+            </div>
+            <div class="main-chart">
+              <chart [type]="type" [data]="data" [options]="options"></chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div class="tabs">
+      <tabset [justified]="true">
+        <tab>
+          <ng-template tabHeading>
+            <span><i class="fas fa-shopping-cart mr-2"></i>Top Customers</span>
+          </ng-template>
+          <div class="top-3-customer">
+            <div class="second-customer">
+              <div class="shape shape-blue"></div>
+              <img class="second-customer-pp" src="assets/images/user.jpg" alt="Top customers profile picture">
+              <div class="second-customer-details">
+                <h4>2</h4>
+                <i class="fas fa-shopping-cart"></i>
+                <span>9</span>
+              </div>
+              <p class="user-name">User Name</p>
+            </div>
+            <div class="first-customer">
+              <div class="shape shape-orange"></div>
+              <img class="first-customer-pp" src="assets/images/user.jpg" alt="Top customers profile picture">
+              <div class="first-customer-details">
+                <h4>1</h4>
+                <i class="fas fa-shopping-cart"></i>
+                <span>23</span>
+              </div>
+              <p class="user-name">User Name</p>
+            </div>
+            <div class="third-customer">
+              <div class="shape shape-red"></div>
+              <img class="third-customer-pp" src="assets/images/user.jpg" alt="Top customers profile picture">
+              <div class="third-customer-details">
+                <h4>3</h4>
+                <i class="fas fa-shopping-cart"></i>
+                <span>5</span>
+              </div>
+              <p class="user-name">User Name</p>
+            </div>
+          </div>
+          <div class="top-customers">
+            <div class="title">
+              <h5>Top Customers</h5>
+            </div>
+            <div class="content">
+              <ul>
+                <li><img src="assets/images/user.jpg">
+                  <div class="user-details">
+                    <h6 class="d-inline-block">User Name</h6>
+                    <span class="d-block">23 sale transaction</span>
+                  </div>
+                  <span class="user-order">1</span>
+                </li>
+                <li><img src="assets/images/user.jpg">
+                  <div class="user-details">
+                    <h6 class="d-inline-block">User Name</h6>
+                    <span class="d-block">23 sale transaction</span>
+                  </div>
+                  <span class="user-order">1</span>
+                </li>
+                <li><img src="assets/images/user.jpg">
+                  <div class="user-details">
+                    <h6 class="d-inline-block">User Name</h6>
+                    <span class="d-block">23 sale transaction</span>
+                  </div>
+                  <span class="user-order">1</span>
+                </li>
+                <li><img src="assets/images/user.jpg">
+                  <div class="user-details">
+                    <h6 class="d-inline-block">User Name</h6>
+                    <span class="d-block">23 sale transaction</span>
+                  </div>
+                  <span class="user-order">1</span>
+                </li>
+                <li><img src="assets/images/user.jpg">
+                  <div class="user-details">
+                    <h6 class="d-inline-block">User Name</h6>
+                    <span class="d-block">23 sale transaction</span>
+                  </div>
+                  <span class="user-order">1</span>
+                </li>
+                <li><img src="assets/images/user.jpg">
+                  <div class="user-details">
+                    <h6 class="d-inline-block">User Name</h6>
+                    <span class="d-block">23 sale transaction</span>
+                  </div>
+                  <span class="user-order">1</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </tab>
+        <tab>
+          <ng-template tabHeading>
+            <span><i class="fas fa-briefcase mr-2"></i>Top Sales</span>
+          </ng-template>
+          Basic content 1
+        </tab>
+      </tabset>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>All rights reserved for DEXEF</p>
+  </footer>
+</div>

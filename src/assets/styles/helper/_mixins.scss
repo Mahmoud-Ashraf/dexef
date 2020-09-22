@@ -1,0 +1,148 @@
+/* ==================== Global Mixins for Coloring ( Buttons, Backgrounds, Texts & Alerts) ==================== */
+
+@mixin coloring($color, $textColor) {
+  @each $colorName, $colorCode in $color {
+    @each $textColorName, $textColorCode in $textColor {
+      @if ($colorName == $textColorName) {
+
+        /* ==================== Coloring Buttons ==================== */
+        // Normal Button
+        .btn-#{$colorName} {
+          color: $textColorCode;
+          border: 1px solid $colorCode;
+          background-color: $colorCode;
+          transition: 0.3s ease-in-out;
+          line-height: 1;
+          &:hover {
+            background-color: darken($colorCode, 5);
+            border-color: darken($colorCode, 10);
+            color: $textColorCode;
+          }
+          &:focus {
+            box-shadow: 0 0 0 0.2rem lighten($colorCode, 30%);
+          }
+          &:disabled,
+          &.ladda-button:disabled {
+            cursor: not-allowed;
+            background-color: lighten($colorCode, 7);
+          }
+          &:not(:disabled) {
+            &:active {
+              color: $textColorCode;
+              background-color: $colorCode;
+              border-color: darken($colorCode, 10);
+              &:focus {
+                box-shadow: 0 0 0 0.2rem lighten($colorCode, 17%);
+              }
+            }
+          }
+          i {
+            font-size: .8em;
+          }
+        }
+
+        // Outline Button
+        .btn-outline-#{$colorName} {
+          color: $colorCode;
+          border: 1px solid $colorCode;
+          background-color: transparent;
+          transition: 0.3s ease-in-out;
+          &:hover {
+            background-color: $colorCode;
+            color: $textColorCode;
+            border-color: $colorCode;
+          }
+          &:focus {
+            box-shadow: 0 0 0 0.2rem lighten($colorCode, 30%);
+          }
+          &:disabled,
+          &.ladda-button:disabled {
+            cursor: not-allowed !important;
+            &:hover {
+              color: $colorCode;
+              border: 1px solid $colorCode;
+              background-color: transparent;
+            }
+          }
+          &:not(:disabled) {
+            &:active {
+              color: $textColorCode;
+              background-color: $colorCode;
+              border-color: $colorCode;
+              &:focus {
+                box-shadow: 0 0 0 0.2rem lighten($colorCode, 17%);
+              }
+            }
+          }
+        }
+
+
+        /* ==================== Coloring Backgrounds ==================== */
+
+        .bg-#{$colorName} {
+          background-color: $colorCode;
+        }
+
+        /* ==================== Coloring Texts ==================== */
+
+        .text-#{$colorName} {
+          color: $colorCode;
+        }
+
+        /* ==================== Coloring Alerts ==================== */
+
+        .alert-#{$colorName} {
+          color: darken($colorCode, 10);
+          background-color: lighten($colorCode, 40%);
+          border-color: lighten($colorCode, 30%);
+          hr {
+            border-top-color: lighten($colorCode, 30%);
+          }
+          &.alert-link {
+            color: darken($colorCode, 13);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ==================== Global Mixins for Scrollbars ==================== */
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+/* ==================== Global Mixins for Overlay ==================== */
+@mixin overlay($bg: black, $opacity: 0.5) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($bg, $opacity);
+    cursor: not-allowed;
+  }
+}
